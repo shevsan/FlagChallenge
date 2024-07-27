@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FlagChallenge</string>
+    <string name="flag_splash">Splashscreen flag</string>
+    <string name="guess_the_flag">Try to guess the flag!</string>
+    <string name="start">Start!</string>
+    <string name="flag_globe">Globe of flags</string>
+    <string name="success">Success! Well done!</string>
+    <string name="failure">That is wrong :( You can do better, come on!</string>
+    <string name="arrow_back">Go back</string>
+    <string name="done">Done</string>
+    <string name="ur_score">Your score:</string>
+    <string name="round">Round</string>
+    <string name="smth_went_wrong">Something went wrong!</string>
+    <string name="ur_last_score">Your last game score:</string>
+</resources>
