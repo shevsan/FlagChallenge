@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalComposeUiApi::class)
+
 package ua.oshevchuk.flagchallenge.ui.screens.general
 
 import android.widget.Toast
@@ -24,10 +26,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.BottomCenter
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -43,6 +49,12 @@ import ua.oshevchuk.flagchallenge.common.Response
 import ua.oshevchuk.flagchallenge.ui.components.DotLoader
 import ua.oshevchuk.flagchallenge.ui.entities.GameResult
 import ua.oshevchuk.flagchallenge.ui.theme.Purple80
+
+
+fun Modifier.withTestTag(tag: String): Modifier = semantics {
+    testTag = tag
+    testTagsAsResourceId = true
+}
 
 @Composable
 fun GeneralScreen(
@@ -105,23 +117,29 @@ fun GeneralScreenContent(
                 shape = RoundedCornerShape(20.dp),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .align(Alignment.TopCenter),
+                    .align(Alignment.TopCenter)
+                    .withTestTag(stringResource(id = R.string.SelectRegistrationCountryScreen)),
                 colors = CardDefaults.cardColors(containerColor = Purple80)
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = Modifier.fillMaxWidth().padding(10.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp)
+                        .withTestTag(stringResource(id = R.string.SelectRegistrationCountryScreen))
                 ) {
                     Text(
                         text = "${stringResource(id = R.string.ur_last_score)} ${lastResult.value?.score}",
                         color = Color.White,
-                        fontSize = 16.sp
+                        fontSize = 16.sp,
+                        modifier = Modifier.withTestTag(stringResource(id = R.string.SelectRegistrationCountryScreen))
                     )
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
                         text = "${lastResult.value?.getTime()} ${lastResult.value?.getDate()}",
                         color = Color.White,
-                        fontSize = 16.sp
+                        fontSize = 16.sp,
+                        modifier = Modifier  .withTestTag(stringResource(id = R.string.SelectRegistrationCountryScreen))
                     )
                 }
             }
