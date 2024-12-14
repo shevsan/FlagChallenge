@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="SelectRegistrationCountryScreen">SelectRegistrationCountryScreen</string>
+  <string name="SelectRegistrationCountryScreen2">SelectRegistrationCountryScreen</string>
+  <string name="SelectRegistrationCountryScreen3">SelectRegistrationCountryScreen</string>
+  <string name="SelectRegistrationCountryScreen4">SelectRegistrationCountryScreen</string>
+  <string name="SelectRegistrationCountryScreen5">SelectRegistrationCountryScreen</string>
+  <string name="SelectRegistrationCountryScreen6">SelectRegistrationCountryScreen</string>
+
+</resources>
