@@ -19,15 +19,15 @@ jobs:
           distribution: 'oracle'
           java-version: '17'
 
-      - name: Build project
-        run: ./gradlew build
-
       - name: Ensure all modifiers have withTestTag
         run: |
           if grep -r "modifier = Modifier" ./app/src/main | grep -v "withTestTag"; then
             echo "Found a modifier without withTestTag!"
             exit 1
           fi
+
+      - name: Build project
+        run: ./gradlew buil
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
